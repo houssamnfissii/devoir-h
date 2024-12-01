@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English Irregular Verbs</title>
+    <link rel="stylesheet" href="styles.css">
+  
+</head>
+<body>
+    <header class="header">
+        <button id="swapButton" class="nav-arrows">◀ ▶</button>
+        <h1>English: Irregular Verbs</h1>
+    </header>
+    <main class="container">
+        <section class="table-container">
+            <table id="verbTable" border="1" class="table">
+                <thead>
+                    <tr>
+                        <th>Base form</th>
+                        <th>Past tense</th>
+                        <th>Past participle</th>
+                        <th>Translation</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Rows will be dynamically added via JS -->
+                </tbody>
+            </table>
+        </section>
+
+        <div class="sidebar">
+            <div class="sidebarsection1">
+                ▶
+            </div>
+            <aside class="sidebarsection2">
+                <div class="controls">
+                    <button id="addVerb">Add a verb</button>
+                    <input type="text" id="searchVerb" placeholder="Verb to find...">
+                    <button id="findVerbButton">Find</button>
+                </div>
+                <div class="links">
+                    <ul id="dynamicLinks">
+                        <!-- Links will be dynamically generated -->
+                    </ul>
+                </div>
+                <h2 class="statisticstitle">Statistics</h2>
+                <div class="statistics">
+                    <p id="dynamicStats">Loading statistics...</p>
+                </div>
+            </aside>
+        </div>
+
+        <!-- Modal for editing verbs -->
+        <div id="editModal" class="modal" style="display: none;">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <h2>Edit Verb</h2>
+                <table class="modal-table">
+                    <tr>
+                        <td><label for="editBase">Base:</label></td>
+                        <td><input type="text" id="editBase" placeholder="Enter base form"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="editPast">Past:</label></td>
+                        <td><input type="text" id="editPast" placeholder="Enter past tense"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="editParticiple">Participle:</label></td>
+                        <td><input type="text" id="editParticiple" placeholder="Enter past participle"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="editTranslation">Translation:</label></td>
+                        <td><input type="text" id="editTranslation" placeholder="Enter translation"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: center;">
+                            <button id="updateVerb" class="btn-update">Update</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        
+    </main>
+    <script src="scripts.js"></script>
+</body>
+</html>

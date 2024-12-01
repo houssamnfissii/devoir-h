@@ -1,0 +1,288 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 5px;
+    background-color: #f0f8ff;
+}
+
+.header {
+    background-color: #87ceeb;
+    color: #ff4081;
+    padding: 12px;
+    height: 10vh;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 4px solid black;
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-arrows .arrow {
+    font-size: 20px;
+    cursor: pointer;
+    color: red;
+    margin: 0 5px;
+}
+
+.container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.table-container {
+    flex: 0 0 60%; /* Flex shorthand: no grow, no shrink, and 60% basis */
+    background: white;
+    border: 4px solid black;
+    height: 86vh;
+    overflow-y: auto;
+}
+
+.sidebar {
+    flex: 0 0 39%; /* Flex shorthand: no grow, no shrink, and 35% basis */
+    top: 0;
+    right: 0;
+    width: 500px;
+    height: 86vh;
+    background-color: #f9f9f9;
+    border: 5px solid black;
+    font-family: Arial, sans-serif;
+    display: flex;
+}
+
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table tr th, td {
+    padding: 10px;
+    text-align: left;
+    border: 1px solid black;
+}
+
+.table tr th {
+    background-color: lightgreen;
+    font-weight: bold;
+}
+
+.table tr:nth-child(even) {
+    background-color: #ffe4cc;
+}
+
+.table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.actions {
+    display: flex;
+    gap: 1px;
+}
+
+
+
+.sidebar .sidebarsection1 {
+    width: 7%;
+    height: 100%;
+    background-color: #87ceeb;
+    padding: 70px 0;
+    border: 3px solid green;
+    font-size: 30px;
+
+    /* Vertical centering */
+    display: flex;
+    align-items: center; /* Centers the content vertically */
+    text-align: center; /* Keeps the text aligned horizontally within its container */
+}
+
+.sidebar .sidebarsection2 {
+    flex: 1; /* Occupies the remaining width of the sidebar */
+    padding: 15px;
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Enables scrolling if content overflows vertically */
+    border-left: 3px solid black; /* Adds a border to separate from sidebarsection1 */
+}
+
+
+
+
+/* Sidebar controls section */
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+
+
+
+
+#searchVerb {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+/* Links section styling */
+.links {
+    border: 2px dotted green;
+    padding: 10px;
+    text-align: center;
+    height: 75vh;
+    /* overflow-y: hidden;  */
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center;    /* Vertical centering */
+}
+
+
+.links:hover {
+    overflow-y: auto; /* Scroll appears on hover */
+}
+
+.links h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.links ul {
+   
+    padding: 0;
+    margin: 0;
+}
+
+.links li {
+    margin: 5px 0;
+}
+
+.links a {
+    color: purple;
+    text-decoration: none;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+.statisticstitle
+{
+    font-size: 20px;
+    text-align: center;
+}
+/* Statistics section styling */
+.statistics {
+    padding: 10px;
+    text-align: center;
+    background-color: #87ceeb;
+    font-size: 14px;
+}
+
+.statistics h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.statistics p {
+    margin: 0;
+    line-height: 1.5;
+}
+/* Modal Container */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5); /* Black background with transparency */
+}
+
+/* Modal Content */
+.modal-content {
+    background-color: #f9f9f9;
+    margin: 5% auto;
+    padding: 25px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    position: relative;
+    text-align: center;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Modal Table */
+.modal-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.modal-table td {
+    padding: 8px 10px;
+    vertical-align: middle;
+}
+
+.modal-table label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+}
+
+.modal-table input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.modal-table input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+
+
+/* Close Button */
+.close {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 22px;
+    font-weight: bold;
+    color: #555;
+    cursor: pointer;
+}
+
+.close:hover {
+    color: #d9534f;
+}
+@keyframes highlight {
+    from {
+        background-color: yellow;
+    }
+    to {
+        background-color: transparent;
+    }
+}
+
+.highlight {
+    animation: highlight 1s ease-in-out;
+}
