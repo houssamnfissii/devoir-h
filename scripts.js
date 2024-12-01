@@ -1,6 +1,6 @@
 // Données des verbes
 const verbs = [
-    { base: "abide", past: "abode", participle: "abode", translation: "demeurer" },
+    { base: "abide", past: "abode", participle: "abode", translation: "demeurer",image:"https://thumbs.dreamstime.com/b/abide-concept-word-blackboard-background-165087436.jpg" ,phrase:"She promised to abide by the rules." },
     { base: "awake", past: "awoke", participle: "awoken", translation: "(se) réveiller, aussi awake/awoke/awoke" },
     { base: "be", past: "was/were", participle: "been", translation: "être" },
     { base: "bear", past: "bore", participle: "borne", translation: "porter/supporter/soutenir" },
@@ -156,32 +156,40 @@ document.getElementById('findVerbButton').addEventListener('click', () => {
     });
 });
 
-// Open edit modal
+
+
+
 function openEditModal(index) {
     editingIndex = index;
     const verb = verbs[index];
+    // Display image and phrase without allowing edits
+    document.getElementById('editImagePreview').src = verb.image; 
+    document.getElementById('editPhrase').value = verb.phrase || "";
+
+    // Populate editable fields
     document.getElementById('editBase').value = verb.base;
     document.getElementById('editPast').value = verb.past;
     document.getElementById('editParticiple').value = verb.participle;
     document.getElementById('editTranslation').value = verb.translation;
+
+    // Show the modal
     document.getElementById('editModal').style.display = 'block';
 }
 
-// Close modal
 function closeModal() {
     document.getElementById('editModal').style.display = 'none';
     editingIndex = null;
 }
 
-// Update verb
 document.getElementById('updateVerb').addEventListener('click', () => {
     if (editingIndex !== null) {
-        verbs[editingIndex] = {
-            base: document.getElementById('editBase').value,
-            past: document.getElementById('editPast').value,
-            participle: document.getElementById('editParticiple').value,
-            translation: document.getElementById('editTranslation').value
-        };
+        // Update only editable fields
+        verbs[editingIndex].base = document.getElementById('editBase').value;
+        verbs[editingIndex].past = document.getElementById('editPast').value;
+        verbs[editingIndex].participle = document.getElementById('editParticiple').value;
+        verbs[editingIndex].translation = document.getElementById('editTranslation').value;
+
+        // Optionally re-render the table
         renderTable();
         closeModal();
     }

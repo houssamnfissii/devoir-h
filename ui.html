@@ -59,6 +59,18 @@
                 <h2>Edit Verb</h2>
                 <table class="modal-table">
                     <tr>
+                        <td><label for="editImage">Image:</label></td>
+                        <td>
+                            <img id="editImagePreview" src="" alt="Verb Image" width="100" style="display: block; margin-bottom: 10px;">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="editPhrase">Phrase:</label></td>
+                        <td>
+                            <input type="text" id="editPhrase" readonly >
+                        </td>
+                    </tr>
+                    <tr>
                         <td><label for="editBase">Base:</label></td>
                         <td><input type="text" id="editBase" placeholder="Enter base form"></td>
                     </tr>
@@ -82,6 +94,7 @@
                 </table>
             </div>
         </div>
+        
         
     </main>
     <script src="scripts.js"></script>

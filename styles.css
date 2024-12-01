@@ -39,15 +39,6 @@ body {
     gap: 10px;
     flex-wrap: wrap;
 }
-
-.table-container {
-    flex: 0 0 60%; /* Flex shorthand: no grow, no shrink, and 60% basis */
-    background: white;
-    border: 4px solid black;
-    height: 86vh;
-    overflow-y: auto;
-}
-
 .sidebar {
     flex: 0 0 39%; /* Flex shorthand: no grow, no shrink, and 35% basis */
     top: 0;
@@ -59,6 +50,16 @@ body {
     font-family: Arial, sans-serif;
     display: flex;
 }
+
+.table-container {
+    flex: 0 0 60%; /* Flex shorthand: no grow, no shrink, and 60% basis */
+    background: white;
+    border: 4px solid black;
+    height: 86vh;
+    overflow-y: auto;
+}
+
+
 
 
 .table {
